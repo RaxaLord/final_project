@@ -12,6 +12,19 @@ const {
   updateProfile,
 } = require('./controllers/authCtrl');
 
+const {
+  addLocation,
+  getAllLocations,
+  getOneLocation,
+  // updateLocation,
+} = require('./controllers/locationCtrl');
+
+const {
+  saveLocation,
+  unsaveLocation,
+  getSaved,
+} = require('./controllers/saveCtrl');
+
 const app = express();
 app.use(express.json());
 
@@ -47,8 +60,15 @@ app.get('/auth/user_session', userSession);
 app.put('/auth/update_profile', updateProfile);
 
 // location endpoints
+app.post('/api/location/add', addLocation);
+app.get('/api/locations', getAllLocations);
+app.get('/api/locations/:id', getOneLocation);
+// app.put('/api/location/update', updateLocation);
 
 // saved endpoints
+app.post('/api/save/:location_id', saveLocation);
+app.delete('/api/remove/:saved_id', unsaveLocation);
+app.get('/api/saved', getSaved);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server listening on port: ${SERVER_PORT}`);
