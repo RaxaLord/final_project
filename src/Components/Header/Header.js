@@ -3,6 +3,7 @@ import Axios from 'axios';
 import { getUserSession } from '../../redux/reducer';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import './Header.css';
 
 class Header extends Component {
   constructor(props) {
@@ -27,14 +28,15 @@ class Header extends Component {
         <div>
           <Link to='/main'>
             <img
-              src='https://bankingthefuture.com/wp-content/uploads/2019/04/logo-placeholder.jpg'
+              src={process.env.PUBLIC_URL + 'logo.png'}
               alt='logo'
-              width='125px'
-              height='50px'
+              // width='125px'
+              // height='50px'
             />
           </Link>
         </div>
-        <div>
+
+        <div className='header-right'>
           <img
             src={
               'https://tricityescaperooms.com/wp-content/uploads/2018/01/person-placeholder-male-5.jpg'
@@ -43,7 +45,12 @@ class Header extends Component {
             width='50px'
             height='50px'
           />
-          <span onClick={() => this.logout()}>logout</span>
+
+          {this.props.user ? (
+            <span onClick={() => this.logout()}>logout</span>
+          ) : (
+            <Link to='/login'>Login</Link>
+          )}
         </div>
       </header>
     );

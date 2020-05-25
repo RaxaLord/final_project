@@ -36,11 +36,11 @@ export default class Location extends Component {
     const mappedLocation = this.state.location.map((location) => {
       return (
         <div>
-          <section>
+          <div>
             <img src={location.image} alt={location.name} />
-          </section>
+          </div>
 
-          <section>
+          <div>
             <h1>
               {location.name}
               <br />
@@ -54,7 +54,7 @@ export default class Location extends Component {
             <button onClick={() => this.save(location.location_id)}>
               Save For Later!
             </button>
-          </section>
+          </div>
         </div>
       );
     });

@@ -1,0 +1,14 @@
+/* header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: blueviolet;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+} */

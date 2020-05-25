@@ -1,0 +1,27 @@
+/* .main-container {
+  background: cyan;
+  width: 100%;
+  display: flex;
+}
+
+.location-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.map {
+  background-color: darkgrey;
+  width: 40%;
+}
+
+.locations {
+  height: 300px;
+  border: solid black 1px;
+}
+
+.locations img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */

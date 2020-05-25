@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
+import './Main.css';
 
 export default class Main extends Component {
   constructor(props) {
@@ -25,20 +26,24 @@ export default class Main extends Component {
 
     const mappedLocations = this.state.locations.map((location) => {
       return (
-        <section>
+        <div className='locations'>
           <Link to={`/locations/${location.location_id}`}>
             <img src={location.image} alt={location.name} />
           </Link>
-          <h1>{location.name}</h1>
-          <h1>{location.description}</h1>
-        </section>
+          {/* <div>
+            <h1>{location.name}</h1>
+            <p>{location.description}</p>
+          </div> */}
+        </div>
       );
     });
     return (
       <div>
         <Header />
-        <div>google maps section</div>
-        {mappedLocations}
+        <div className='main-container'>
+          <div className='location-container'>{mappedLocations}</div>
+          <div className='map'>google maps section</div>
+        </div>
       </div>
     );
   }
