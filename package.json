@@ -2,7 +2,7 @@
   "name": "explor",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:4040",
+  "proxy": "http://localhost:4444",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -47,5 +47,12 @@
   "devDependencies": {},
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "nodemonConfig": {
+    "ext": "js,sql",
+    "ignore": [
+      "src/*",
+      "public/*"
+    ]
+  }
 }

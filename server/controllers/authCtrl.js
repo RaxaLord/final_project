@@ -3,9 +3,9 @@ const bcrypt = require('bcrypt');
 module.exports = {
   login: async (req, res) => {
     const db = req.app.get('db');
-    const { email, password } = req.body;
+    const { username, password } = req.body;
     const foundUser = await db
-      .select_user(email)
+      .select_user(username)
       .catch((err) => console.log(err));
 
     if (!foundUser.length) {
@@ -35,7 +35,7 @@ module.exports = {
     const db = req.app.get('db');
     const { username, email, location, password, photo } = req.body;
     const foundUser = await db
-      .select_user(email)
+      .select_user(username)
       .catch((err) => console.log(err));
 
     if (foundUser.length > 0) {

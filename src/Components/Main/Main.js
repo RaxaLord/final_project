@@ -26,7 +26,7 @@ export default class Main extends Component {
     const mappedLocations = this.state.locations.map((location) => {
       return (
         <section>
-          <Link to={`/location/${location.location_id}`}>
+          <Link to={`/locations/${location.location_id}`}>
             <img src={location.image} alt={location.name} />
           </Link>
           <h1>{location.name}</h1>
