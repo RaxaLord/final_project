@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Header from '../Header/Header';
 // import { Link } from 'react-router-dom';
+import './Saved.css';
 
 export default class Saved extends Component {
   constructor(props) {
@@ -38,18 +39,21 @@ export default class Saved extends Component {
 
     const savedLocations = this.state.savedLocations.map((location) => {
       return (
-        <div>
-          <h1>{location.name}</h1>
-          <p>rating: {location.rating}/5</p>
-          <img src={location.image} alt={location.name} />
+        <div className='saved-location'>
+          {/* <h1>{location.name}</h1>
+          <p>rating: {location.rating}/5</p> */}
           <button onClick={() => this.remove(location.saved_id)}>X</button>
+          <img src={location.image} alt={location.name} />
         </div>
       );
     });
     return (
       <div>
         <Header />
-        {savedLocations}
+        <div className='main-saved'>{savedLocations}</div>
+        <div className='saved-map'>
+          <img src='https://via.placeholder.com/350x150' alt='placeholder' />
+        </div>
       </div>
     );
   }

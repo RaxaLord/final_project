@@ -30,10 +30,10 @@ export default class Main extends Component {
           <Link to={`/locations/${location.location_id}`}>
             <img src={location.image} alt={location.name} />
           </Link>
-          {/* <div>
+          <div>
             <h1>{location.name}</h1>
-            <p>{location.description}</p>
-          </div> */}
+            <p>{location.address}</p>
+          </div>
         </div>
       );
     });
@@ -42,7 +42,9 @@ export default class Main extends Component {
         <Header />
         <div className='main-container'>
           <div className='location-container'>{mappedLocations}</div>
-          <div className='map'>google maps section</div>
+          <div className='map'>
+            <img src='https://via.placeholder.com/500x750' alt='placeholder' />
+          </div>
         </div>
       </div>
     );

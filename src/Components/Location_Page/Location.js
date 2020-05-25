@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Header from '../Header/Header';
-// import { Link } from 'react-router-dom';
+import './Location_Page.css';
 
 export default class Location extends Component {
   constructor(props) {
@@ -35,12 +35,12 @@ export default class Location extends Component {
 
     const mappedLocation = this.state.location.map((location) => {
       return (
-        <div>
+        <div className='location-page'>
           <div>
             <img src={location.image} alt={location.name} />
           </div>
 
-          <div>
+          <div className='description'>
             <h1>
               {location.name}
               <br />
@@ -59,27 +59,10 @@ export default class Location extends Component {
       );
     });
 
-    // const moreLocations = this.state.locations.map((locations) => {
-    //   return (
-    //     <div>
-    //       <section>
-    //         <Link to={`/locations/${locations.location_id}`}>
-    //           <img src={locations.image} alt={locations.name} />
-    //         </Link>
-    //       </section>
-    //     </div>
-    //   );
-    // });
-
     return (
       <div>
         <Header />
         {mappedLocation}
-        {/* <section>
-          <h1>explore more</h1>
-          <br />
-          {moreLocations}
-        </section> */}
       </div>
     );
   }

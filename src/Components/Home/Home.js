@@ -97,7 +97,7 @@ export default function Home() {
             src='https://www.youtube.com/embed/aCgtcTxxA58?autoplay=1&mute=1&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com'
           ></iframe>
         </div>
-        <div className='content'>
+        <div className='content' id='content'>
           <Link to='/main'>
             <h1>EXPLOR NOW</h1>
           </Link>
