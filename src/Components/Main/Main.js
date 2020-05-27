@@ -32,7 +32,7 @@ export default class Main extends Component {
           </Link>
           <div>
             <h1>{location.name}</h1>
-            <p>{location.address}</p>
+            {/* <p>{location.address}</p> */}
           </div>
         </div>
       );

@@ -4,6 +4,8 @@ header {
   padding: 10px;
   /* background-color: blueviolet; */
   margin-bottom: 10px;
+  width: 92.5%;
+  margin: auto;
 }
 
 .header-right {

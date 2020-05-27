@@ -37,14 +37,16 @@ class Header extends Component {
         </div>
 
         <div className='header-right'>
-          <img
-            src={
-              'https://tricityescaperooms.com/wp-content/uploads/2018/01/person-placeholder-male-5.jpg'
-            }
-            alt='display'
-            width='50px'
-            height='50px'
-          />
+          <Link to='/saved'>
+            <img
+              src={
+                'https://tricityescaperooms.com/wp-content/uploads/2018/01/person-placeholder-male-5.jpg'
+              }
+              alt='display'
+              width='50px'
+              height='50px'
+            />
+          </Link>
 
           {this.props.user ? (
             <span onClick={() => this.logout()}>logout</span>

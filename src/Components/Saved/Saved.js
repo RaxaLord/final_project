@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Header from '../Header/Header';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Saved.css';
 
 export default class Saved extends Component {
@@ -50,9 +50,11 @@ export default class Saved extends Component {
     return (
       <div>
         <Header />
-        <div className='main-saved'>{savedLocations}</div>
-        <div className='saved-map'>
-          <img src='https://via.placeholder.com/350x150' alt='placeholder' />
+        <div className='main-saved'>
+          <div className='saved-box'>{savedLocations}</div>
+          <div className='saved-map'>
+            <img src='https://via.placeholder.com/350x150' alt='placeholder' />
+          </div>
         </div>
       </div>
     );

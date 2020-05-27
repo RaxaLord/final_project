@@ -20,35 +20,35 @@ export default function Home() {
             className='text'
           />
         </Parallax>
-        <Parallax speed={4}>
+        <Parallax speed={2}>
           <img
             src={process.env.PUBLIC_URL + 'X.png'}
             alt='text'
             className='text'
           />
         </Parallax>
-        <Parallax speed={-3}>
+        <Parallax speed={-6}>
           <img
             src={process.env.PUBLIC_URL + 'P.png'}
             alt='text'
             className='text'
           />
         </Parallax>
-        <Parallax speed={5}>
+        <Parallax speed={-3}>
           <img
             src={process.env.PUBLIC_URL + 'L.png'}
             alt='text'
             className='text'
           />
         </Parallax>
-        <Parallax speed={-4}>
+        <Parallax speed={-2}>
           <img
             src={process.env.PUBLIC_URL + 'O.png'}
             alt='text'
             className='text'
           />
         </Parallax>
-        <Parallax speed={-3}>
+        <Parallax speed={-8}>
           <img
             src={process.env.PUBLIC_URL + 'R.png'}
             alt='text'
