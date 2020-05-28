@@ -32,7 +32,7 @@ class Header extends Component {
 
         <div className='header-right'>
           {this.props.user ? (
-            <div>
+            <div className='avatar'>
               <Link to='/saved'>
                 <img
                   className='display-photo'
@@ -44,7 +44,7 @@ class Header extends Component {
               </Link>
               <br />
 
-              <span onClick={() => this.logout()}>logout</span>
+              <span onClick={() => this.logout()}>Sign Out</span>
             </div>
           ) : (
             <Link to='/login'>Login</Link>

@@ -27,7 +27,7 @@ export default class Location extends Component {
   }
 
   save(id) {
-    axios.post(`/api/save/${id}`);
+    axios.post(`/api/save/${id}`).then(window.location.replace('#main'));
   }
 
   render() {
@@ -36,24 +36,34 @@ export default class Location extends Component {
     const mappedLocation = this.state.location.map((location) => {
       return (
         <div className='location-page'>
+          <img
+            src='https://miro.medium.com/max/4064/1*qYUvh-EtES8dtgKiBRiLsA.png'
+            alt='map'
+            className='location-map-photo'
+          />
+
           <div>
-            <img src={location.image} alt={location.name} />
-          </div>
-
-          <div className='description'>
-            <h1>
-              {location.name}
+            <img
+              className='location-image'
+              src={location.image}
+              alt={location.name}
+            />
+            <div className='description'>
+              <h1>
+                {location.name}
+                <br />
+                {location.address}
+                {','} {location.state}
+                <br />
+              </h1>
+              <p>{location.description}</p>
               <br />
-              {location.address} {location.state}
               <br />
-            </h1>
-            <p>{location.description}</p>
-            <br />
-            <br />
 
-            <button onClick={() => this.save(location.location_id)}>
-              Save For Later!
-            </button>
+              <button onClick={() => this.save(location.location_id)}>
+                Save For Later!
+              </button>
+            </div>
           </div>
         </div>
       );

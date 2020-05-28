@@ -43,11 +43,11 @@ export default class Main extends Component {
         <div className='main-container'>
           <div className='location-container'>{mappedLocations}</div>
           <div className='map'>
-            {/* <img src='https://via.placeholder.com/500x750' alt='placeholder' /> */}
             <img
-              src='https://maps.googleapis.com/maps/api/staticmap?center=san+diego,+ca&zoom=13&scale=false&size=600x300&maptype=roadmap&sensor=false&key=AIzaSyAIg15NpYzq7XnvG21zy_nlaMAVpNyXfO8&format=png&visual_refresh=true&markers=size:mid%7Ccolor:red%7Csan+diego,+ca'
-              alt='Google Map of san diego, ca'
-            ></img>
+              className='main-map-photo'
+              src='https://miro.medium.com/max/4064/1*qYUvh-EtES8dtgKiBRiLsA.png'
+              alt='placeholder'
+            />
           </div>
         </div>
       </div>

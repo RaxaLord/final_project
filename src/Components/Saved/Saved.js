@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Header from '../Header/Header';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './Saved.css';
 
 export default class Saved extends Component {
@@ -42,8 +42,13 @@ export default class Saved extends Component {
         <div className='saved-location'>
           {/* <h1>{location.name}</h1>
           <p>rating: {location.rating}/5</p> */}
-          <button onClick={() => this.remove(location.saved_id)}>X</button>
           <img src={location.image} alt={location.name} />
+          <button
+            className='deleteBtn'
+            onClick={() => this.remove(location.saved_id)}
+          >
+            remove
+          </button>
         </div>
       );
     });
@@ -53,7 +58,10 @@ export default class Saved extends Component {
         <div className='main-saved'>
           <div className='saved-box'>{savedLocations}</div>
           <div className='saved-map'>
-            <img src='https://via.placeholder.com/350x150' alt='placeholder' />
+            <img
+              src='https://miro.medium.com/max/4064/1*qYUvh-EtES8dtgKiBRiLsA.png'
+              alt='placeholder'
+            />
           </div>
         </div>
       </div>
