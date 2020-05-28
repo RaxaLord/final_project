@@ -8,24 +8,17 @@ header {
   margin: auto;
 }
 
-.header-right {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* margin-right: 10px; */
-  /* background-color: yellow; */
-}
+/* .header-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  background-color: yellow;
+} */
 
 .display-photo {
   border-radius: 50px;
   object-fit: cover;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-
-.avatar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }

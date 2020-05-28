@@ -56,13 +56,13 @@ export default class Saved extends Component {
       <div>
         <Header />
         <div className='main-saved'>
-          <div className='saved-box'>{savedLocations}</div>
           <div className='saved-map'>
             <img
               src='https://miro.medium.com/max/4064/1*qYUvh-EtES8dtgKiBRiLsA.png'
               alt='placeholder'
             />
           </div>
+          <div className='saved-box'>{savedLocations}</div>
         </div>
       </div>
     );
