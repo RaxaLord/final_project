@@ -4,6 +4,7 @@ import { getUserSession } from '../../redux/reducer';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import './Tooltip.css';
 
 class Header extends Component {
   constructor(props) {
@@ -33,21 +34,61 @@ class Header extends Component {
         <div className='header-right'>
           {this.props.user ? (
             <div className='avatar'>
-              <Link to='/saved'>
+              <nav id='colorNav'>
+                <ul>
+                  <li class='navi'>
+                    <div>
+                      <img
+                        className='display-photo'
+                        src={this.props.user.photo}
+                        alt='display'
+                        width='50px'
+                        height='50px'
+                      />
+                    </div>
+                    <ul>
+                      <li>
+                        <p>
+                          Signed in as, <b>{this.props.user.username}</b>
+                        </p>
+                      </li>
+                      <li>
+                        <Link to='/saved'>
+                          <p>Saved Locations</p>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to='/update'>
+                          <p>Update Profile</p>
+                        </Link>
+                      </li>
+                      <li>
+                        <p onClick={() => this.logout()}>Sign Out</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+
+              {/* <Link to='/saved'>
                 <img
-                  className='display-photo'
+                  className='display-photo fa fa-windows'
                   src={this.props.user.photo}
                   alt='display'
                   width='50px'
                   height='50px'
                 />
-              </Link>
+              </Link> */}
+
+              {/* <Tooltip /> */}
               <br />
 
-              <span onClick={() => this.logout()}>Sign Out</span>
+              {/* <span onClick={() => this.logout()}>Sign Out</span> */}
             </div>
           ) : (
-            <Link to='/login'>Login</Link>
+            <Link to='/login'>
+              <p>Sign In</p>
+            </Link>
           )}
         </div>
       </header>

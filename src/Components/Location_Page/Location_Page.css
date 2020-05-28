@@ -1,7 +1,7 @@
 .location-page {
   width: 80%;
   /* background-color: darkslategrey; */
-  margin: 0 auto;
+  margin: auto;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   border-radius: 10px;
   display: flex;
@@ -22,8 +22,36 @@
   border-radius: 0 0 10px 0;
 }
 
+.location-page button:hover {
+  background-color: #96bfd0;
+}
+
 .location-map-photo {
   width: 50%;
   object-fit: cover;
   border-radius: 10px 0 0 10px;
+}
+
+.backBtn {
+  width: 175px;
+  /* background-color: tomato; */
+  margin-left: 150px;
+}
+
+.backBtn a {
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.backBtn a:hover {
+  color: #96bfd0;
+}
+
+.zoom {
+  transition: transform 0.2s;
+}
+
+.zoom:hover {
+  transform: scale(1.5);
 }

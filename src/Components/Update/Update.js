@@ -24,7 +24,7 @@ export default class Update extends Component {
           state: res.data.state,
           photo: res.data.photo,
         });
-        window.location.reload();
+        window.location.replace('#/main');
       });
   }
 
@@ -55,6 +55,7 @@ export default class Update extends Component {
               name='state'
               value={this.state.state}
               placeholder='Which state do you live in?'
+              maxLength='2'
               onChange={(e) => this.changeHandler(e)}
             />
             <input

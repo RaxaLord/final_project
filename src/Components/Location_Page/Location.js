@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Header from '../Header/Header';
 import './Location_Page.css';
+import { Link } from 'react-router-dom';
 
 export default class Location extends Component {
   constructor(props) {
@@ -35,37 +36,44 @@ export default class Location extends Component {
 
     const mappedLocation = this.state.location.map((location) => {
       return (
-        <div className='location-page'>
-          <img
-            src='https://miro.medium.com/max/4064/1*qYUvh-EtES8dtgKiBRiLsA.png'
-            alt='map'
-            className='location-map-photo'
-          />
-
-          <div>
+        <container>
+          <div className='location-page'>
             <img
-              className='location-image'
-              src={location.image}
-              alt={location.name}
+              src='https://miro.medium.com/max/4064/1*qYUvh-EtES8dtgKiBRiLsA.png'
+              alt='map'
+              className='location-map-photo'
             />
-            <div className='description'>
-              <h1>
-                {location.name}
-                <br />
-                {location.address}
-                {','} {location.state}
-                <br />
-              </h1>
-              <p>{location.description}</p>
-              <br />
-              <br />
 
-              <button onClick={() => this.save(location.location_id)}>
-                Save For Later!
-              </button>
+            <div>
+              <img
+                className='location-image'
+                src={location.image}
+                alt={location.name}
+              />
+              <div className='description'>
+                <h1>
+                  {location.name}
+                  <br />
+                  {location.address}
+                  {','} {location.state}
+                  <br />
+                </h1>
+                <p>{location.description}</p>
+                <br />
+                <br />
+
+                <button onClick={() => this.save(location.location_id)}>
+                  Save For Later!
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+          <div className='backBtn zoom'>
+            <Link to='/main'>
+              <h1>&#8592; GO BACK</h1>
+            </Link>
+          </div>
+        </container>
       );
     });
 
