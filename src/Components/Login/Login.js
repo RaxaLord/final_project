@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './Login.css';
 
 export default class Login extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ export default class Login extends Component {
       location: '',
       password: '',
       photo: '',
-      registerMode: true,
+      registerMode: false,
     };
 
     this.login = this.login.bind(this);
@@ -47,79 +48,86 @@ export default class Login extends Component {
       .post('/auth/register', { username, email, location, password, photo })
       .catch((err) => console.log(err));
     console.log('from register:', user);
+
+    window.location.replace('#/main');
+    window.location.reload();
   }
 
   render() {
     // console.log(this.state);
     return (
-      <div>
-        {this.state.registerMode ? (
-          <div>
-            <input
-              type='text'
-              name='username'
-              value={this.state.username}
-              placeholder='username'
-              onChange={(e) => this.changeHandler(e)}
-            />
-            <input
-              type='email'
-              name='email'
-              value={this.state.email}
-              placeholder='email'
-              onChange={(e) => this.changeHandler(e)}
-            />
-            <input
-              type='text'
-              name='location'
-              value={this.state.location}
-              placeholder='state'
-              maxLength='2'
-              onChange={(e) => this.changeHandler(e)}
-            />
-            <input
-              type='password'
-              name='password'
-              value={this.state.password}
-              placeholder='password'
-              onChange={(e) => this.changeHandler(e)}
-            />
-            <input
-              type='text'
-              name='photo'
-              value={this.state.photo}
-              placeholder='display photo'
-              onChange={(e) => this.changeHandler(e)}
-            />
-            <button onClick={this.register}>Submit</button>
-            <p>
-              Already have an account?{' '}
-              <span onClick={() => this.toggleLoginMode()}>Login</span>
-            </p>
-          </div>
-        ) : (
-          <div>
-            <input
-              type='text'
-              name='username'
-              value={this.state.username}
-              placeholder='username'
-              onChange={(e) => this.changeHandler(e)}
-            />
-            <input
-              type='password'
-              name='password'
-              value={this.state.password}
-              placeholder='password'
-              onChange={(e) => this.changeHandler(e)}
-            />
-            <button onClick={this.login}>Login</button>
-            <p>
-              Need an account?{' '}
-              <span onClick={() => this.toggleLoginMode()}>Register here</span>
-            </p>
-          </div>
-        )}
+      <div className='login-page'>
+        <div className='form'>
+          {this.state.registerMode ? (
+            <div className='register-form'>
+              <input
+                type='text'
+                name='username'
+                value={this.state.username}
+                placeholder='username'
+                onChange={(e) => this.changeHandler(e)}
+              />
+              <input
+                type='email'
+                name='email'
+                value={this.state.email}
+                placeholder='email'
+                onChange={(e) => this.changeHandler(e)}
+              />
+              <input
+                type='text'
+                name='location'
+                value={this.state.location}
+                placeholder='state'
+                maxLength='2'
+                onChange={(e) => this.changeHandler(e)}
+              />
+              <input
+                type='password'
+                name='password'
+                value={this.state.password}
+                placeholder='password'
+                onChange={(e) => this.changeHandler(e)}
+              />
+              <input
+                type='text'
+                name='photo'
+                value={this.state.photo}
+                placeholder='display photo (in url format)'
+                onChange={(e) => this.changeHandler(e)}
+              />
+              <button onClick={this.register}>Submit</button>
+              <p className='message'>
+                Already have an account?{' '}
+                <span onClick={() => this.toggleLoginMode()}>Login</span>
+              </p>
+            </div>
+          ) : (
+            <div className='login-form'>
+              <input
+                type='text'
+                name='username'
+                value={this.state.username}
+                placeholder='username'
+                onChange={(e) => this.changeHandler(e)}
+              />
+              <input
+                type='password'
+                name='password'
+                value={this.state.password}
+                placeholder='password'
+                onChange={(e) => this.changeHandler(e)}
+              />
+              <button onClick={this.login}>Login</button>
+              <p className='message'>
+                Not registered?{' '}
+                <span onClick={() => this.toggleLoginMode()}>
+                  Create an account
+                </span>
+              </p>
+            </div>
+          )}
+        </div>
       </div>
     );
   }

@@ -8,10 +8,10 @@ const initialState = {
 const GET_USER = 'GET_USER';
 
 export function getUserSession() {
-  let user = axios.get('/auth/user_session').then((res) => res.data);
+  // console.log(user);
   return {
     type: GET_USER,
-    payload: user,
+    payload: axios.get('/auth/user_session').then((res) => res.data),
   };
 }
 
@@ -21,7 +21,7 @@ export default function reducer(state = initialState, action) {
   switch (type) {
     case GET_USER + '_PENDING':
       return { ...state, loading: true };
-    case GET_USER + '_FUFFILLED':
+    case GET_USER + '_FULFILLED':
       return { ...state, user: payload, loading: false };
     case GET_USER + '_REJECTED':
       return { ...state, loading: false };

@@ -98,7 +98,7 @@ export default function Home() {
           ></iframe>
         </div>
         <div className='content' id='content'>
-          <Link to='/main'>
+          <Link to='/login'>
             <h1>EXPLOR NOW</h1>
           </Link>
         </div>

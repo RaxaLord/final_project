@@ -22,34 +22,30 @@ class Header extends Component {
   }
 
   render() {
-    // console.log(this.props.user.photo);
     return (
       <header>
         <div>
           <Link to='/main'>
-            <img
-              src={process.env.PUBLIC_URL + 'logo.png'}
-              alt='logo'
-              // width='125px'
-              // height='50px'
-            />
+            <img src={process.env.PUBLIC_URL + 'logo.png'} alt='logo' />
           </Link>
         </div>
 
         <div className='header-right'>
-          <Link to='/saved'>
-            <img
-              src={
-                'https://tricityescaperooms.com/wp-content/uploads/2018/01/person-placeholder-male-5.jpg'
-              }
-              alt='display'
-              width='50px'
-              height='50px'
-            />
-          </Link>
-
           {this.props.user ? (
-            <span onClick={() => this.logout()}>logout</span>
+            <div>
+              <Link to='/saved'>
+                <img
+                  className='display-photo'
+                  src={this.props.user.photo}
+                  alt='display'
+                  width='50px'
+                  height='50px'
+                />
+              </Link>
+              <br />
+
+              <span onClick={() => this.logout()}>logout</span>
+            </div>
           ) : (
             <Link to='/login'>Login</Link>
           )}
