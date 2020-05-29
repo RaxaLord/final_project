@@ -63,6 +63,9 @@ class Header extends Component {
                         </Link>
                       </li>
                       <li>
+                        <p>Add New Location</p>
+                      </li>
+                      <li>
                         <p onClick={() => this.logout()}>Sign Out</p>
                       </li>
                     </ul>

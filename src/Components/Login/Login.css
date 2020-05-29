@@ -32,7 +32,7 @@
   font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #4caf50;
+  background: #96bfd0;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -45,7 +45,7 @@
 .form button:hover,
 .form button:active,
 .form button:focus {
-  background: #43a047;
+  background: #87acbc;
 }
 .form .message {
   margin: 15px 0 0;
